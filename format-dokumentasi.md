@@ -1,14 +1,12 @@
-# Submission 1: Nama Proyek Anda
-Nama:
-
-Username dicoding:
+# Submission 1:  Spam Email Prediction
+Username Dicoding: nbilasals
 
 | | Deskripsi |
 | ----------- | ----------- |
-| Dataset | [nama dataset](https://www.kaggle.com/) |
-| Masalah | Deskripsi masalah yang di angkat |
-| Solusi machine learning | Deskripsi solusi machine learning yang akan dibuat |
-| Metode pengolahan | Deskripsi metode pengolahan data yang digunakan |
-| Arsitektur model | Deskripsi arsitektur model yang diguanakan |
-| Metrik evaluasi | Deksripsi metrik yang digunakan untuk mengevaluasi performa model |
-| Performa model | Deksripsi performa model yang dibuat |
+| Dataset | [Spam Emails](https://www.kaggle.com/datasets/abdallahwagih/spam-emails) |
+| Masalah | pam email merupakan jenis email yang dikirimkan tanpa diminta, biasanya berisi iklan, penipuan, atau konten yang tidak diinginkan lainnya.. Masalah spam email ini tidak hanya mengganggu kenyamanan pengguna, tetapi juga dapat menimbulkan berbagai risiko, seperti kebocoran data pribadi, penipuan (phishing), atau bahkan malware yang dapat merusak perangkat pengguna.  |
+| Solusi machine learning | Penting untuk mengembangkan solusi yang dapat secara otomatis mengidentifikasi dan memisahkan email spam dari email yang sah. Penggunaan teknologi machine learning, khususnya model prediksi berbasis data, menawarkan potensi besar untuk menyelesaikan masalah ini. |
+| Metode pengolahan | Dilakukan split data training dan eval menjadi rasio 80:20, dan mengubah data feature menjadi lowercase serta feature label menjadi integer |
+| Arsitektur model | Arsitektur model yang digunakan adalah model embedding yang terdiri dari beberapa lapisan. Pertama, terdapat **vectorize_layer** untuk mengubah teks menjadi representasi numerik. Kemudian, **layer embedding** dengan dimensi embedding sebesar 16 digunakan untuk mengonversi kata-kata menjadi vektor dengan ukuran tetap. Selanjutnya, **layer AveragePooling1D** diterapkan untuk merangkum informasi dari urutan teks. Model dilanjutkan dengan dua lapisan **dense**, masing-masing dengan 64 dan 32 unit, serta fungsi aktivasi **ReLU** untuk menangani non-linearitas. Untuk klasifikasi dua label, lapisan terakhir menggunakan fungsi aktivasi **sigmoid**. Loss function yang digunakan adalah **binary_crossentropy**, dengan **optimizer Adam** untuk optimisasi model, dan **BinaryAccuracy** sebagai metrik evaluasi untuk mengukur akurasi prediksi.|
+| Metrik evaluasi | Metrik evaluasi yang digunakan dalam proyek ini meliputi ExampleCount, AUC, False Positives (FP), True Positives (TP), False Negatives (FN), True Negatives (TN), dan Binary Accuracy, yang semuanya membantu menilai kinerja model dalam mengklasifikasikan email spam dan non-spam.|
+| Performa model | Model yang dibuat menunjukkan performa yang sangat baik dengan AUC sebesar 0.98191, yang menunjukkan kemampuannya dalam membedakan antara email spam dan non-spam. Dengan binary accuracy 97.2%, model berhasil mengklasifikasikan sebagian besar email dengan benar. Dari total 1143 contoh data, hanya 28 email spam yang salah diklasifikasikan sebagai non-spam (false negatives) dan 4 email non-spam yang salah diklasifikasikan sebagai spam (false positives). Model ini juga menghasilkan 980 true negatives dan 131 true positives, dengan loss sebesar 0.11305, yang menunjukkan prediksi yang cukup akurat. |
