@@ -431,3 +431,18 @@ pusher = Pusher(
 )
 
 interactive_context.run(pusher)
+
+import shutil
+
+# Zip the folder
+shutil.make_archive('/content/pipelines/nbilasals-pipeline', 'zip', '/content/pipelines/nbilasals-pipeline')
+
+# Download the zipped folder
+from google.colab import files
+files.download('/content/pipelines/nbilasals-pipeline.zip')
+
+# Zip the folder
+shutil.make_archive('/content/serving_model_dir', 'zip', '/content/serving_model_dir')
+files.download('/content/serving_model_dir.zip')
+
+!pip freeze > requirements.txt
